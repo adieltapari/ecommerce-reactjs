@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: green;
+  }
+  
+  .container ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  li {
+    margin: 20px;
+    list-style-type: none;
+  }
