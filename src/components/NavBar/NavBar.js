@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react';
 const NavBar = () => {
 	return (
 		<nav className='container'>
-      <Icon name='cart arrow down' />
+			<Icon name='cart arrow down' />
 			<ul>
 				<li>
 					<a href='https://www.google.com'>Galeria</a>
