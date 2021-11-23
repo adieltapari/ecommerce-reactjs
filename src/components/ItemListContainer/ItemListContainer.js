@@ -1,18 +1,20 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
+import ItemCount from '../ItemCount/ItemCount';
 
-import './CartWidget.css';
+import './ItemListContainer.css';
 
-const CartWidget = ({ img, name, description }) => (
-	<div className='CartWidget'>
+const ItemListContainer = ({ img, name, description }) => (
+	<div className='ItemListContainer'>
 		<Card>
 			<Image src={img} wrapped ui={false} />
 			<Card.Content>
 				<Card.Header>{name}</Card.Header>
 			</Card.Content>
 			<Card.Description>{description}</Card.Description>
+			<ItemCount />
 		</Card>
 	</div>
 );
 
-export default CartWidget;
+export default ItemListContainer;

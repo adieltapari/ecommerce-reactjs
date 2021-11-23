@@ -1,13 +1,15 @@
-.container {
+.containerCartWidget {
     display: flex;
-    justify-content: space-between ;
-    background-color: rgb(171, 175, 171);
+    justify-content: space-between;
+    background-color: green;
+    border-radius: 10px;
   }
   
+
   .container ul {
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    align-items: center;
   }
   
   li {

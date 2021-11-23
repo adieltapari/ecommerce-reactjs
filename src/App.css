@@ -2,7 +2,7 @@
 	text-align: center;
 }
 
-.CartWidgetSection {
+.ContainerSection {
 	display: flex;
 	justify-content: space-evenly;
 }

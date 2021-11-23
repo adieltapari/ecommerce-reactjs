@@ -1,22 +1,26 @@
 import "./NavBar.css";
-import { Icon } from 'semantic-ui-react';
+import CartWidget from "./CartWidget/CartWidget";
 
 const NavBar = () => {
 	return (
 		<nav className='container'>
-			<Icon name='cart arrow down' />
 			<ul>
 				<li>
-					<a href='https://www.google.com'>Galeria</a>
+					<a href='https://www.google.com'>INICIO</a>
 				</li>
 				<li>
-					<a href='https://www.google.com'>Inicio</a>
+					<a href='https://www.google.com'>PRODUCTOS</a>
 				</li>
 				<li>
-					<a href='https://www.google.com'>Enlace</a>
+					<a href='https://www.google.com'>NOSOTROS</a>
 				</li>
 				<li>
-					<a href='https://www.google.com'>Enlace</a>
+					<a href='https://www.google.com'>INFORMACIÓN ÚTIL</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<CartWidget/>
 				</li>
 			</ul>
 		</nav>
