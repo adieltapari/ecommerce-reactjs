@@ -12,7 +12,10 @@ const ItemListContainer = ({ img, name, description }) => (
 				<Card.Header>{name}</Card.Header>
 			</Card.Content>
 			<Card.Description>{description}</Card.Description>
-			<ItemCount />
+			<ItemCount 
+				stock= '20'
+				initial= '0'
+			/>
 		</Card>
 	</div>
 );

@@ -8,7 +8,7 @@ const CartWidget = () => {
         <div className='containerCartWidget'>
 			<ul>
 				<li>
-                    <Icon name='cart arrow down' text='Mi carrito' size='large'/>
+                    <Icon name='cart arrow down'  size='large'/>
 				</li>
                 <li>
                     <p>Mi carrito - 0 Items</p>
