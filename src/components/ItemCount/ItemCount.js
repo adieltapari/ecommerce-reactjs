@@ -19,22 +19,40 @@ function ItemCount ({stock}) {
             setCounter(counter - 1);
         }
 	};
+
     return(
         <div className='ItemCountContainer'>
             <Card>
                 <Card.Content>
-                    <div className='CounterSection'>
-                        <p>Cantidad: {counter}</p>
-                        <div className='btn-section'>
-                            <button onClick={handlerCounterUp}>Incrementar</button>
-                            <button onClick={handlerCounterDown}>Decrementar</button>
-                        </div>
+                    <div className='containerItemCount'>
+                        <ul>
+                            <li>
+                                <button onClick={handlerCounterDown}> - </button>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <p>{counter}</p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <button onClick={handlerCounterUp}>+</button>
+                            </li>
+                        </ul>
                     </div>
+                    <div className='containerAddCart'>
+                        <ul>
+                            <li>
+                                <button className="buttonAdd"> Agregar al carrito</button>
+                            </li>
+                        </ul>
+                    </div>
+
                 </Card.Content>
             </Card>
-	    </div>
+        </div>
     );
-
 }
     
 

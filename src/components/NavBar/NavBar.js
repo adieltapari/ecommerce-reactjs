@@ -3,7 +3,7 @@ import CartWidget from "./CartWidget/CartWidget";
 
 const NavBar = () => {
 	return (
-		<nav className='container'>
+		<nav className='containerNavBar'>
 			<ul>
 				<li>
 					<a href='https://www.google.com'>INICIO</a>

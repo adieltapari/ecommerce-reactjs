@@ -2,6 +2,7 @@ import "./CartWidget.css";
 import { Icon } from 'semantic-ui-react';
 
 import React from 'react'
+import ItemCount from "../../ItemCount/ItemCount";
 
 const CartWidget = () => {
     return (
@@ -11,7 +12,7 @@ const CartWidget = () => {
                     <Icon name='cart arrow down'  size='large'/>
 				</li>
                 <li>
-                    <p>Mi carrito - 0 Items</p>
+                    <p>Mi carrito  - 0 Items</p>
                 </li>
 			</ul>
         </div>

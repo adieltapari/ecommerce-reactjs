@@ -1,10 +1,11 @@
-.container {
+.containerNavBar {
     display: flex;
     justify-content: space-between ;
-    background-color: rgb(171, 175, 171);
+    align-items: center;
+    background-color: #C0C0C0;
   }
   
-  .container ul {
+  .containerNavBar ul {
     display: flex;
     justify-content: space-between;
     padding: 5px;
@@ -14,3 +15,7 @@
     margin: 10px;
     list-style-type: none;
   }
+  li a{
+    font-size: small;
+    color:#000000;
+    }
