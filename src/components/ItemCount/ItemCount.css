@@ -7,6 +7,7 @@
 .containerItemCount {
     display: flex;
     justify-content: space-between ;
+    align-items: center;
   }
 
 .container ul {
@@ -50,6 +51,30 @@
   justify-content: center;
   padding-left: 0px;
   }
- button :hover{
-   background-color: blue;
+  .buttonAdd:hover {
+   background-color: #008000;
  }
+
+
+ button {
+  background-color: #ffffff;
+  border: 2px solid #C0C0C0;
+  color: #000000;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 1px;
+}
+
+button:hover {
+  background-color:#00FF00; /* Green */
+  color: white;
+}
+button:active{
+  background-color: #008000;
+}
