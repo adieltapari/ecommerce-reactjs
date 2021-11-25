@@ -4,9 +4,9 @@ import { Card } from 'semantic-ui-react';
 import './ItemCount.css';
 
 
-function ItemCount ({stock}) {
+function ItemCount ({stock, initial}) {
     // SETEAMOS STATE COUNTER
-	const [counter, setCounter] = useState(0);
+	const [counter, setCounter] = useState(initial);
 	// METODOS PARA ACTUALIZAR EL STATE
 	const handlerCounterUp = () => {
         if(counter < stock){

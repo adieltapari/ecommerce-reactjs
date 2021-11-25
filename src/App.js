@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ItemCount from './components/Item/ItemCount/ItemCount';
 import ItemListContainer from './components/Item/ItemListContainer/ItemListContainer';
 
 
