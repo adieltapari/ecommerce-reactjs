@@ -48,7 +48,6 @@ function ItemCount ({stock}) {
                             </li>
                         </ul>
                     </div>
-
                 </Card.Content>
             </Card>
         </div>

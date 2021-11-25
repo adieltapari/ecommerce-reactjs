@@ -1,0 +1,11 @@
+.ItemListContainer {
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+}
+.description{
+  padding: 5px;
+}
+.content{
+	border-top: 0px solid rgba(34,36,38,.1);
+}
