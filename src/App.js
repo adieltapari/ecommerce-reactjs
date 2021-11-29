@@ -11,7 +11,8 @@ function App() {
       <div className="App">
         <NavBar/>
         <div className='ContainerSection'>
-              <ItemListContainer />
+              <ItemListContainer categoryId="MLA1574"/>
+              <ItemListContainer categoryId="MLA1499"/>
         </div>
       </div>
   );

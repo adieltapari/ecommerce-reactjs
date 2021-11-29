@@ -1,18 +1,20 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
-import './Item.css';
 
 const Item = ({item}) => (
-	<div className='ItemContainer'>
-		<Card>
-			<Card.Content>
-				<Image src={item.img} wrapped ui={false} />	
-				<Card.Header>$ {item.price}</Card.Header>
-                <p>stock: {item.stock}</p>
-				<button>ver detalle del producto</button>
-			</Card.Content>
-		</Card>
-	</div>
+	<>
+            <div className="ui cards">
+                <div className="card">
+                    <div className="image">
+                        <img src={item.thumbnail} alt="imagen producto"/>
+                    </div>
+                    <div className="content">
+                        <div className="header">${item.price}</div>
+                        <div className="meta">{item.category_id}</div>
+                        <div className="descripcion">{item.title}</div>
+                    </div>
+                </div>
+            </div>            
+        </>
 );
 
 export default Item;

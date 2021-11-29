@@ -1,24 +1,20 @@
 import React from 'react';
 import Item from '../Item/Item';
-import data from './data'
 
-const ItemList = () => {
-
+const ItemList = ({items}) => {
   return (
     <>
-      {
-        data.product.map((items, index) =>{
-            return(
-              <Item 
-                price ={items.price}
-                stock={items.stock}
-                img={items.img} 
-                key={index}
-              />
-            )
-        })}
+      <div className="ui grid">
+        {
+          items.map((item) =>(
+            <div className="four wide column">
+              <Item item={item}/>
+            </div>
+          ))
+        }
+      </div>
     </>
-  );
+  )
 }
 
 export default ItemList;

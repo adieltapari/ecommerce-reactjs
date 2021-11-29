@@ -1,19 +1,29 @@
-import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
+import React,{ useEffect, useState } from 'react';
+import ItemList from './ItemList/ItemList'
 
 import './ItemListContainer.css';
 
-const ItemListContainer = () => {
-	const addToCart = (qty) =>{
-		let prod;
-		qty > 1 ? prod = 'productos' : prod = 'producto';
-		alert(`Ingresaste ${qty} ${prod} al carrito.`);
-	}
+const ItemListContainer = ({categoryId}) => {
+	// const addToCart = (qty) =>{
+	// 	let prod;
+	// 	qty > 1 ? prod = 'productos' : prod = 'producto';
+	// 	alert(`Ingresaste ${qty} ${prod} al carrito.`);
+	// }
+	const [items, setItems] = useState([])
+	useEffect(() => {
+		setTimeout(()=> {
+				fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=4`)
+				.then(response => response.json())
+				.then(respJSON => {setItems(respJSON.results)})
+				.catch(error => console.log('Error:',error))
+		},2000)
+	}, [categoryId])
 
 	return (
 		<>
+			<h1>{categoryId}</h1>
 			<div >
-				<ItemCount stock={20} initial={1} onAdd={addToCart}/>
+				<ItemList items={items} />
 			</div>
 		</>
 	);
