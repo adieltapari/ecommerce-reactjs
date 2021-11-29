@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ItemListContainer from './components/Item/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/Item/ItemDetailContainer/ItemDetailContainer';
 
 
 // Components
@@ -11,8 +11,7 @@ function App() {
       <div className="App">
         <NavBar/>
         <div className='ContainerSection'>
-              <ItemListContainer categoryId="MLA1574"/>
-              <ItemListContainer categoryId="MLA1499"/>
+             <ItemDetailContainer />
         </div>
       </div>
   );

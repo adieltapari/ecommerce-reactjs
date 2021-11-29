@@ -7,8 +7,8 @@ const ItemList = ({items}) => {
       <div className="ui grid">
         {
           items.map((item) =>(
-            <div className="four wide column">
-              <Item item={item}/>
+            <div className="four wide column" key={item.id}>
+              <Item item={item}  />
             </div>
           ))
         }
