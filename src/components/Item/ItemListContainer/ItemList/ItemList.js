@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import Item from '../Item/Item';
 import data from './data'
 
 const ItemList = () => {
@@ -7,12 +7,12 @@ const ItemList = () => {
   return (
     <>
       {
-        data.product.map((item, index) =>{
+        data.product.map((items, index) =>{
             return(
-              <ItemDetail 
-                price ={item.price}
-                stock={item.stock}
-                img={item.img} 
+              <Item 
+                price ={items.price}
+                stock={items.stock}
+                img={items.img} 
                 key={index}
               />
             )

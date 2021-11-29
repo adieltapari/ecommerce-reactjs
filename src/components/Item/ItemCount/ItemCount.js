@@ -1,56 +1,58 @@
 import React, { useState } from 'react';
-import { Card } from 'semantic-ui-react';
 
 import './ItemCount.css';
 
-
-function ItemCount ({stock, initial}) {
+function ItemCount ({stock, initial,onAdd}) {
     // SETEAMOS STATE COUNTER
-	const [counter, setCounter] = useState(initial);
+	const [qty, setQty] = useState(initial);
 	// METODOS PARA ACTUALIZAR EL STATE
-	const handlerCounterUp = () => {
-        if(counter < stock){
-            setCounter(counter + 1);
+
+	const sumQty = () => {
+        if(qty < stock){
+            setQty(qty + 1);
         }
 	};
 
-	const handlerCounterDown = () => {
-        if(counter>0){
-            setCounter(counter - 1);
+	const restQty = () => {
+        if(qty>0){
+            setQty(qty - 1);
         }
 	};
 
     return(
-        <div className='ItemCountContainer'>
-            <Card>
-                <Card.Content>
-                    <div className='containerItemCount'>
-                        <ul>
-                            <li>
-                                <button onClick={handlerCounterDown}> - </button>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <p>{counter}</p>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <button onClick={handlerCounterUp}>+</button>
-                            </li>
-                        </ul>
+        <>
+            <div className="ui cards">
+                <div className="card">
+                    <div className="image">
+                        <img src="https://semantic-ui.com/images/avatar2/large/elyse.png" alt="imagen producto"/>
                     </div>
-                    <div className='containerAddCart'>
-                        <ul>
-                            <li>
-                                <button className="buttonAdd"> Agregar al carrito</button>
-                            </li>
-                        </ul>
+                    <div className="content">
+                        <div className="header">Producto</div>
+                        <div className="meta">Categoría</div>
+                        <div className="descripcion">Descripción del Producto</div>
                     </div>
-                </Card.Content>
-            </Card>
-        </div>
+                    <div className="extra content">
+                        <div className="ui three button">
+                            <div className="ui basic red button" onClick={restQty}>-</div>   
+                            <div className="ui basic button">{qty}</div>
+                            <div className="ui basic green button" onClick={sumQty}>+</div>
+                        </div>
+                    </div>
+                    {
+                        qty > 0 ?
+                        <div className="ui button attached button" onClick={()=> onAdd(qty)}>
+                            <i className="cart icon"></i>
+                            Añadir al carrito
+                        </div>
+                        :
+                        <div className="ui button attached button disabled">
+                            <i className="cart icon"></i>
+                            Añadir al carrito
+                        </div>
+                    }
+                </div>
+            </div>            
+        </>
     );
 }
     
