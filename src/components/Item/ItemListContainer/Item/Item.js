@@ -1,7 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Item = ({item}) => (
 	<>
+    <NavLink to={`/item/${item.id}`}> 
         <div className="ui cards">
             <div className="card">
                 <div className="image">
@@ -13,7 +15,8 @@ const Item = ({item}) => (
                     <div className="descripcion">{item.title}</div>
                 </div>
             </div>
-        </div>            
+        </div> 
+    </NavLink>           
     </>
 );
 

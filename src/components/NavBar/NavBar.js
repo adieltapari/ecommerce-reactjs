@@ -1,21 +1,20 @@
 import "./NavBar.css";
 import CartWidget from "./CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 	return (
 		<nav className='containerNavBar'>
 			<ul>
 				<li>
-					<a href='https://www.google.com'>INICIO</a>
+					<NavLink to="/" acctiveClassName="active" className="item">
+						Inicio
+					</NavLink>
 				</li>
 				<li>
-					<a href='https://www.google.com'>PRODUCTOS</a>
-				</li>
-				<li>
-					<a href='https://www.google.com'>NOSOTROS</a>
-				</li>
-				<li>
-					<a href='https://www.google.com'>INFORMACIÓN ÚTIL</a>
+					<NavLink to="/category/MLA3025" acctiveClassName="active" className="item">
+						celulares
+					</NavLink>				
 				</li>
 			</ul>
 			<ul>
