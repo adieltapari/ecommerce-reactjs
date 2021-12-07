@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import ItemCount from '../ItemCount/ItemCount.js'
 
 const ItemDetailContainer = () => {
 	const [item, setItem] = useState([])
@@ -29,13 +28,6 @@ const ItemDetailContainer = () => {
 		}, 2000)
 	}, [])
 
-
-	const addToCart = (qty) => {
-		let prod;
-		qty > 1 ? prod = 'productos' : prod = 'producto';
-		alert(`Ingresaste ${qty} ${prod} al carrito.`);
-	}
-
 	if (loading) {
 		return <h5>cargando detalle del  producto..</h5>
 	}
@@ -43,7 +35,6 @@ const ItemDetailContainer = () => {
 		<>
 			<div>
 				<ItemDetail item={item} />
-				<ItemCount stock={20} initial={1} onAdd={addToCart} />
 			</div>
 		</>
 	);
