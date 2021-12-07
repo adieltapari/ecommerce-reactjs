@@ -1,17 +1,18 @@
 .containerCartWidget {
-    display: flex;
-    justify-content: space-between;
-    background-color: #00FF00;
-    border-radius: 10px;
-  }
+  display: flex;
+  justify-content: space-between;
+  background-color: #a6a8ab;
+  border-radius: 10px;
+}
 
-  .container ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  li {
-    margin: 10px;
-    list-style-type: none;
-  }
+.container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  margin: 10px;
+  list-style-type: none;
+  margin-block: auto;
+}
