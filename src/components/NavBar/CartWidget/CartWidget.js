@@ -6,14 +6,14 @@ import React from 'react'
 const CartWidget = () => {
     return (
         <div className='containerCartWidget'>
-			<ul>
-				<li>
-                    <Icon name='cart arrow down'  size='large'/>
-				</li>
+            <ul>
                 <li>
-                    <p>Mi carrito  - 0 item(s)</p>
+                    <Icon name='cart arrow down' size='large' />
                 </li>
-			</ul>
+                <li>
+                    <p> 0 - $0,00</p>
+                </li>
+            </ul>
         </div>
     )
 }

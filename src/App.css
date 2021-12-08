@@ -1,9 +1,9 @@
 .App {
-	text-align: center;
+  text-align: center;
 }
 
 .ContainerSection {
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }

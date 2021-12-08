@@ -10,6 +10,7 @@ import ItemDetailContainer from './components/Item/ItemDetailContainer/ItemDetai
 import Home from './views/Home/Home';
 import Category from './views/Category';
 import Footer from './components/Footer/Footer';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route exact path="/category/:categoryId" element={<Category />}></Route>
           <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
+          <Route exact path="/cart" element={<Cart />}></Route>
         </Routes>
       </Router>
       <Footer />

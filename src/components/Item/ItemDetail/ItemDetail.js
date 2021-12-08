@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
 import { Link } from 'react-router-dom'
-
+import adl_rm_01 from './adl_rm_01.png'
 
 const ItemDetail = ({ item }) => {
 
@@ -17,11 +17,11 @@ const ItemDetail = ({ item }) => {
 
     return (
         <div className="ContainerItemDetail">
-            <div className="ui cards ">
+            <div className="flexbox-container">
+                <div className="image ">
+                    <img src={adl_rm_01} alt={item.title} width="400" />
+                </div>
                 <div className="card">
-                    <div className="image">
-                        <img src={item.thumbnail} alt={item.title} width="300" />
-                    </div>
                     <h2>${item.price}</h2>
                     <h3>{item.title}</h3>
                     <div>
@@ -41,11 +41,9 @@ const ItemDetail = ({ item }) => {
                                     </Link>
                                 </div>
                             </div>
-
                         }
                     </div>
                 </div>
-
             </div>
         </div>
     )

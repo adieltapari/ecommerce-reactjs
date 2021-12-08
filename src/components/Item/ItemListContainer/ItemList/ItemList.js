@@ -1,14 +1,14 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = ({items}) => {
+const ItemList = ({ items }) => {
   return (
     <>
       <div className="ui grid">
         {
-          items.map((item) =>(
+          items.map((item) => (
             <div className="four wide column" key={item.id}>
-              <Item item={item}  />
+              <Item item={item} />
             </div>
           ))
         }

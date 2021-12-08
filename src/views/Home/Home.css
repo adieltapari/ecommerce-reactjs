@@ -1,0 +1,16 @@
+.containerTextHome {
+  background-color: #e3e3e3;
+  text-align: center;
+  padding: 90px;
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: justify;
+}
+.titleHome {
+  font-size: x-large;
+  font-style: unset;
+  color: #4c7cff;
+}
