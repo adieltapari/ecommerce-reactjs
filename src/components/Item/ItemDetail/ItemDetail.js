@@ -7,16 +7,10 @@ import { CartsContext } from '../../../Context/CartContext/CartsContext'
 
 const ItemDetail = ({ item }) => {
 
-    const [carts, setCarts] = useContext(CartsContext)
-    console.log(carts)
+
+    const { addItem } = useContext(CartsContext)
     const [changeButton, setChangeButton] = useState(false)
 
-    const addToCart = (qty) => {
-        let prod;
-        qty > 1 ? prod = 'productos' : prod = 'producto';
-        setChangeButton(true);
-        alert(`Ingresaste ${qty} ${prod} al carrito.`);
-    }
 
     return (
         <div className="ContainerItemDetail">
@@ -30,7 +24,7 @@ const ItemDetail = ({ item }) => {
                     <div>
                         {
                             !changeButton &&
-                            <ItemCount stock={20} initial={0} onAdd={addToCart} changeButton={changeButton} />
+                            <ItemCount item={item} stock={20} initial={0} addite={addItem} changeButton={changeButton} />
                         }
                         {
                             changeButton &&
@@ -39,7 +33,7 @@ const ItemDetail = ({ item }) => {
                                     <Link to="/">
                                         <div className=" ui basic button" >Continue comprando</div>
                                     </Link>
-                                    <button className=" ui basic button" onClick={() => setCarts(item)}>Terminar Compra</button>
+                                    <button className=" ui basic button" >Terminar Compra</button>
                                 </div>
                             </div>
                         }

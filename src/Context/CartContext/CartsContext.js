@@ -1,10 +1,18 @@
 import React, { createContext, useState } from "react";
 
-export const CartsContext = createContext();
+export const CartsContext = createContext([]);
 
 export const CartsProvider = ({ children }) => {
-    const [carts, setCarts] = useState();
+    const [items, setItems] = useState([])
 
-    return <CartsContext.Provider value={[carts, setCarts]}>{children}
-    </CartsContext.Provider>;
-};
+    const isInCart = (id) => {
+
+    }
+    const addiItem = (item, qty) => {
+        setItems([...item, { id: item.id, name: item.title, price: item.price, qty: qty }]);
+    }
+    return (
+        <CartsContext.Provider value={{ items, addiItem }}>{children}
+        </CartsContext.Provider>
+    )
+}

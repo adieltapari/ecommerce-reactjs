@@ -13,7 +13,6 @@ import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import { CartsProvider } from './Context/CartContext/CartsContext';
 
-
 function App() {
   return (
     <CartsProvider>

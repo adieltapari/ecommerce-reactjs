@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ItemCount.css'
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial, addItem, item }) {
     // SETEAMOS STATE COUNTER
     const [qty, setQty] = useState(initial);
     // METODOS PARA ACTUALIZAR EL STATE
@@ -32,7 +32,7 @@ function ItemCount({ stock, initial, onAdd }) {
                         </div>
                         {
                             qty > 0 ?
-                                <div className="ui button attached button" onClick={() => onAdd(qty)}>
+                                <div className="ui button attached button" onClick={() => addItem({ item, qty })}>
                                     <i className="cart icon"></i>
                                     Añadir al carrito
                                 </div>
