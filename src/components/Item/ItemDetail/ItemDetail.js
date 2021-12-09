@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
 import { Link } from 'react-router-dom'
 import adl_rm_01 from './adl_rm_01.png'
+import { CartsContext } from '../../../Context/CartContext/CartsContext'
 
 const ItemDetail = ({ item }) => {
 
+    const [carts, setCarts] = useContext(CartsContext)
+    console.log(carts)
     const [changeButton, setChangeButton] = useState(false)
 
     const addToCart = (qty) => {
@@ -36,9 +39,7 @@ const ItemDetail = ({ item }) => {
                                     <Link to="/">
                                         <div className=" ui basic button" >Continue comprando</div>
                                     </Link>
-                                    <Link to="/cart">
-                                        <div className=" ui basic button">Terminar Comprar</div>
-                                    </Link>
+                                    <button className=" ui basic button" onClick={() => setCarts(item)}>Terminar Compra</button>
                                 </div>
                             </div>
                         }

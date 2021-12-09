@@ -11,21 +11,25 @@ import Home from './views/Home/Home';
 import Category from './views/Category';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
+import { CartsProvider } from './Context/CartContext/CartsContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route exact path="/category/:categoryId" element={<Category />}></Route>
-          <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
-          <Route exact path="/cart" element={<Cart />}></Route>
-        </Routes>
-      </Router>
-      <Footer />
-    </div>
+    <CartsProvider>
+      <div className="App">
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route exact path="/category/:categoryId" element={<Category />}></Route>
+            <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
+            <Route exact path="/cart" element={<Cart />}></Route>
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
+    </CartsProvider>
   );
 }
 
