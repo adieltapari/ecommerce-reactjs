@@ -32,16 +32,23 @@ function ItemCount({ stock, initial, addItem, item }) {
                         </div>
                         {
                             qty > 0 ?
-                                <div className="ui button attached button" onClick={() => addItem({ item, qty })}>
-                                    <i className="cart icon"></i>
-                                    Añadir al carrito
+                                <div className="extra content">
+                                    <div className="ui button attached button" onClick={() => addItem(item, qty)}>
+                                        <i className="cart icon"></i>
+                                        Añadir al carrito
+                                    </div>
                                 </div>
                                 :
-                                <div className="ui button attached button disabled">
-                                    <i className="cart icon"></i>
-                                    Añadir al carrito
+                                <div className="extra content">
+                                    <div className="ui button attached button disabled">
+                                        <i className="cart icon pad1"></i>
+                                        Añadir al carrito
+                                    </div>
                                 </div>
                         }
+                        <div className="ui button green attached button">
+                            Finalizar Compra
+                        </div>
                     </div>
                 </div>
             </div>

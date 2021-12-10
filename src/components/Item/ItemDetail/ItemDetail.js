@@ -9,7 +9,6 @@ const ItemDetail = ({ item }) => {
 
 
     const { addItem } = useContext(CartsContext)
-    const [changeButton, setChangeButton] = useState(false)
 
 
     return (
@@ -22,21 +21,7 @@ const ItemDetail = ({ item }) => {
                     <h2>${item.price}</h2>
                     <h3>{item.title}</h3>
                     <div>
-                        {
-                            !changeButton &&
-                            <ItemCount item={item} stock={20} initial={0} addite={addItem} changeButton={changeButton} />
-                        }
-                        {
-                            changeButton &&
-                            <div className="extra content">
-                                <div className="ui two button">
-                                    <Link to="/">
-                                        <div className=" ui basic button" >Continue comprando</div>
-                                    </Link>
-                                    <button className=" ui basic button" >Terminar Compra</button>
-                                </div>
-                            </div>
-                        }
+                        <ItemCount item={item} stock={20} initial={0} addItem={addItem} />
                     </div>
                 </div>
             </div>
