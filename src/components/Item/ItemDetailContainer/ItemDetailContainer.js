@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 				.then(response => response.json())
 				.then(respJSON => { setItem(respJSON.results[0]); setLoading(false) })
 				.catch(error => console.log('Error:', error))
-		}, 2000)
+		})
 	}, [])
 
 	if (loading) {

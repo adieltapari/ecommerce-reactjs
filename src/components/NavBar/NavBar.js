@@ -8,7 +8,9 @@ const NavBar = () => {
 		<nav className='containerNavBar'>
 			<ul>
 				<li>
-					<img src={adlrobotics} alt="imagen producto" width="60px" />
+					<NavLink to="/">
+						<img src={adlrobotics} alt="imagen producto" width="60px" />
+					</NavLink>
 				</li>
 				<li>
 					<NavLink to="/" acctiveClassName="active" className="item">

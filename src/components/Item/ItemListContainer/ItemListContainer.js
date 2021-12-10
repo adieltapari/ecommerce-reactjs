@@ -13,7 +13,7 @@ const ItemListContainer = ({ categoryId }) => {
 				.then(response => response.json())
 				.then(respJSON => { setItems(respJSON.results); setLoading(false) })
 				.catch(error => console.log('Error:', error))
-		}, 2000)
+		})
 	}, [categoryId])
 	if (loading) {
 		return (
