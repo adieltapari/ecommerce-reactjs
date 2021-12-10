@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './ItemCount.css'
 
 function ItemCount({ stock, initial, addItem, item }) {
@@ -24,7 +25,7 @@ function ItemCount({ stock, initial, addItem, item }) {
                 <div className="ui cards">
                     <div className="card">
                         <div className="extra content">
-                            <div className="ui three button">
+                            <div className=" three button">
                                 <div className="ui basic red button" onClick={restQty}>-</div>
                                 <div className="ui basic button">{qty}</div>
                                 <div className="ui basic green button" onClick={sumQty}>+</div>
@@ -46,9 +47,9 @@ function ItemCount({ stock, initial, addItem, item }) {
                                     </div>
                                 </div>
                         }
-                        <div className="ui button green attached button">
+                        <NavLink to={`/cart`} className="ui button green attached button">
                             Finalizar Compra
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
             </div>
