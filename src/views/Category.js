@@ -8,7 +8,7 @@ const Category = () => {
         <div>
             <ItemListContainer categoryId={params.categoryId} />
             <ItemListContainer categoryId="MLA1499" />
-            <ItemListContainer categoryId="MLA1574" />
+            <ItemListContainer categoryId="MLA1000" />
         </div>
     )
 }

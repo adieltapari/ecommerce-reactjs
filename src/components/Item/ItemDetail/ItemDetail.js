@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
 import { Link } from 'react-router-dom'
-import adl_rm_01 from './adl_rm_01.png'
 import { CartsContext } from '../../../Context/CartContext/CartsContext'
 
 const ItemDetail = ({ item }) => {
@@ -12,10 +11,10 @@ const ItemDetail = ({ item }) => {
 
 
     return (
-        <div className="ContainerItemDetail">
+        <div className="ContainerItemDetail" key={item.id}>
             <div className="flexbox-container">
                 <div className="image ">
-                    <img src={adl_rm_01} alt={item.title} width="400" />
+                    <img src={item.thumbnail} alt="imagen" width={150} />
                 </div>
                 <div className="card">
                     <h2>${item.price}</h2>

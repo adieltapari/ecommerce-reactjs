@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({ itemId }) => {
 	const [item, setItem] = useState([])
 	const [loading, setLoading] = useState(true)
 
@@ -18,15 +19,17 @@ const ItemDetailContainer = () => {
 	// 			.catch(error => console.log('Error:', error))
 	// 	}, 2000)
 	// }, [])
+	const params = useParams();
+
 	useEffect(() => {
 		setLoading(true)
 		setTimeout(() => {
-			fetch(`https://api.mercadolibre.com/sites/MLA/search?q=Adidas&limit=1`)
-				.then(response => response.json())
-				.then(respJSON => { setItem(respJSON.results[0]); setLoading(false) })
-				.catch(error => console.log('Error:', error))
+			fetch(`https://api.mercadolibre.com/items/${params.id}`)
+				.then((response) => response.json())
+				.then((respJSON) => { setItem(respJSON); setLoading(false) })
+				.catch((error) => console.log('Error:', error))
 		})
-	}, [])
+	}, []);
 
 	if (loading) {
 		return <h5>cargando detalle del  producto..</h5>
