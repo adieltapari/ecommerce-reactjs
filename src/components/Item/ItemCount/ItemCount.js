@@ -53,7 +53,6 @@ function ItemCount({ stock, initial, addItem, item }) {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }

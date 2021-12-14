@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
-import { Link } from 'react-router-dom'
-import { CartsContext } from '../../../Context/CartContext/CartsContext'
+import { CartContext } from '../../../Context/CartContext/CartContext'
 
 const ItemDetail = ({ item }) => {
 
-
-    const { addItem } = useContext(CartsContext)
-
+    const { addItem } = useContext(CartContext)
 
     return (
         <div className="ContainerItemDetail" key={item.id}>

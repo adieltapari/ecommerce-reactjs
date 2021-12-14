@@ -11,11 +11,11 @@ import Home from './views/Home/Home';
 import Category from './views/Category';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
-import { CartsProvider } from './Context/CartContext/CartsContext';
+import { CartProvider } from './Context/CartContext/CartContext';
 
 function App() {
   return (
-    <CartsProvider>
+    <CartProvider>
       <div className="App">
         <Router>
           <NavBar />
@@ -28,7 +28,7 @@ function App() {
         </Router>
         <Footer />
       </div>
-    </CartsProvider>
+    </CartProvider>
   );
 }
 
