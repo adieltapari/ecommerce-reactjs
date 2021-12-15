@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+//Firebase
+import { db } from './firebase/firebaseConfig';
 // Components
 import NavBar from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/Item/ItemDetailContainer/ItemDetailContainer'

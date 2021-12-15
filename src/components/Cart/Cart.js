@@ -3,7 +3,8 @@ import { useCartContext } from '../../Context/CartContext/CartContext'
 import './Cart.css'
 
 const Cart = () => {
-    const { items, removeItem, clearItems } = useContext(useCartContext);
+    const { items, removeItem, clearItems, totalPrice } = useContext(useCartContext);
+    console.log(totalPrice);
     return (
         <>
             <div >
@@ -32,6 +33,7 @@ const Cart = () => {
                         <i className="cart icon"></i>
                         vaciar carrito
                     </div>
+                    <p>{totalPrice}</p>
                 </div>
             }
         </>
