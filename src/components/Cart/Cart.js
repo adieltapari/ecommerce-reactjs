@@ -7,6 +7,7 @@ const Cart = () => {
     return (
         <>
             <div >
+                {items.length === 0 && <p> carrito vacio</p>}
                 {
                     items.map((item) => (
                         <div className="ContainerCart" key={item.id}>
