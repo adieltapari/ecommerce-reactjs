@@ -1,10 +1,10 @@
 import "./CartWidget.css";
 import { Icon } from 'semantic-ui-react';
 import React, { useContext } from 'react'
-import { CartContext } from "../../../Context/CartContext/CartContext";
+import { useCartContext } from "../../../Context/CartContext/CartContext";
 
 const CartWidget = () => {
-    const { items } = useContext(CartContext)
+    const { items } = useContext(useCartContext)
     let itemsInCart = 0;
 
     items.map((item) => {

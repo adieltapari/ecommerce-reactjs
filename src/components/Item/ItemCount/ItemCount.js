@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './ItemCount.css'
 
-function ItemCount({ stock, initial, addItem, item }) {
+function ItemCount({ stock, initial, onAdd, item }) {
     // SETEAMOS STATE COUNTER
-    const [qty, setQty] = useState(initial);
+    const [quantity, setQuantity] = useState(initial);
     // METODOS PARA ACTUALIZAR EL STATE
 
     const sumQty = () => {
-        if (qty < stock) {
-            setQty(qty + 1);
+        if (quantity < stock) {
+            setQuantity(quantity + 1);
         }
     };
 
     const restQty = () => {
-        if (qty > 0) {
-            setQty(qty - 1);
+        if (quantity > 0) {
+            setQuantity(quantity - 1);
         }
     };
 
@@ -27,14 +27,14 @@ function ItemCount({ stock, initial, addItem, item }) {
                         <div className="extra content">
                             <div className=" three button">
                                 <div className="ui basic red button" onClick={restQty}>-</div>
-                                <div className="ui basic button">{qty}</div>
+                                <div className="ui basic button">{quantity}</div>
                                 <div className="ui basic green button" onClick={sumQty}>+</div>
                             </div>
                         </div>
                         {
-                            qty > 0 ?
+                            quantity > 0 ?
                                 <div className="extra content">
-                                    <div className="ui button attached button" onClick={() => addItem(item, qty)}>
+                                    <div className="ui button attached button" onClick={() => onAdd(quantity)}>
                                         <i className="cart icon"></i>
                                         Añadir al carrito
                                     </div>
@@ -47,9 +47,6 @@ function ItemCount({ stock, initial, addItem, item }) {
                                     </div>
                                 </div>
                         }
-                        <NavLink to={`/cart`} className="ui button green attached button">
-                            Finalizar Compra
-                        </NavLink>
                     </div>
                 </div>
             </div>

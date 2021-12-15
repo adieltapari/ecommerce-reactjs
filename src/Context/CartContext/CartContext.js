@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 
-export const CartContext = createContext([]);
+export const useCartContext = createContext([]);
 
 export const CartProvider = ({ children }) => {
     const [items, setItems] = useState([])
@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
         return found;
     }
 
-    const addItem = (item, qty) => {
+    const addToCart = (item, qty) => {
         isInCart(item.id)
             ?
             setItems(items.map((prod) => {
@@ -31,13 +31,13 @@ export const CartProvider = ({ children }) => {
         setItems([])
     }
     return (
-        <CartContext.Provider value={{
+        <useCartContext.Provider value={{
             items,
-            addItem,
+            addToCart,
             removeItem,
             clearItems
         }}>
             {children}
-        </CartContext.Provider>
+        </useCartContext.Provider>
     )
 }
