@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useCartContext } from '../../Context/CartContext/CartContext'
-import FormContact from '../FormContact/FormContact';
+import FormContact from '../../components/FormContact/FormContact';
 import './Cart.css'
 
 const Cart = () => {

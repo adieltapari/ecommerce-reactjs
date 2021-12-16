@@ -9,7 +9,7 @@ import ItemDetailContainer from './components/Item/ItemDetailContainer/ItemDetai
 import Home from './views/Home/Home';
 import Category from './views/Category';
 import Footer from './components/Footer/Footer';
-import Cart from './components/Cart/Cart';
+import Cart from './views/Cart/Cart';
 import { CartProvider } from './Context/CartContext/CartContext';
 
 function App() {
