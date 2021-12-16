@@ -5,6 +5,7 @@ import { db } from '../../../Services/getFirestore';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import './ItemListContainer.css';
+import Spinner from '../../Spinner/Spinner';
 
 const ItemListContainer = ({ categoryId }) => {
 	console.log(categoryId)
@@ -32,7 +33,6 @@ const ItemListContainer = ({ categoryId }) => {
 				});
 				setItems(docs);
 			}
-
 		};
 		getProducts();
 		setTimeout(() => {
@@ -40,15 +40,20 @@ const ItemListContainer = ({ categoryId }) => {
 		}, 1000);
 	}, [categoryId]);
 
-	if (isLoading) {
-		return (
-			<h5>cargando detalle del  producto..</h5>
-		)
-	}
+
 	return (
-		<div>
-			<ItemList items={items} />
-		</div>
+		<>
+			{isLoading ? (
+				<div className='spinner'>
+					<Spinner />
+				</div>
+			) : (
+				<div>
+					<ItemList items={items} />
+				</div>
+			)}
+		</>
+
 	);
 }
 
