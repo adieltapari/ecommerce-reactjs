@@ -30,7 +30,7 @@ const Home = () => {
                         <h4 class="ui inverted header">Redes Sociales</h4>
                         <h1 className="titleHome">Aprendé  a programar.</h1>
                         <h1 >Multiples Configuraciones.</h1>
-                        <Link to="/cart">
+                        <Link to="/category/all">
                             <div className=" ui basic button" >COMPRAR</div>
                         </Link>
                     </div>
