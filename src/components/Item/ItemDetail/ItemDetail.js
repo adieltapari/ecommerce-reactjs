@@ -38,7 +38,7 @@ const ItemDetail = ({ item }) => {
                         </Link>
                     )}
                     {changeButton && (
-                        <Link to="/">
+                        <Link to="/category/all">
                             <Button className="ui bottom blue">
                                 Seguir Comprando
                             </Button>
