@@ -1,0 +1,25 @@
+.containerNavBarCategory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a6a8ab;
+}
+
+.containerNavBarCategory ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+li {
+  margin: 10px;
+  list-style-type: none;
+  margin-block: auto;
+}
+li a {
+  font-size: medium;
+  color: #000000;
+}
+.active {
+  color: white;
+}

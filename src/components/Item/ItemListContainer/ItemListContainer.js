@@ -1,28 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList/ItemList'
+//Firebase
+import { db } from '../../../Services/getFirestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ categoryId }) => {
+	console.log(categoryId)
 	const [items, setItems] = useState([])
-	const [loading, setLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(true);
+
 	useEffect(() => {
-		setLoading(true)
+		const getProducts = async () => {
+
+			if (categoryId === 'all') {
+				const q = query(collection(db, 'robotics'));
+				const docs = [];
+				const querySnapshot = await getDocs(q);
+				querySnapshot.forEach((doc) => {
+					docs.push({ ...doc.data(), id: doc.id });
+				});
+				setItems(docs);
+			}
+			else {
+				const q = query(collection(db, 'robotics'), where('category', '==', categoryId));
+				const docs = [];
+				const querySnapshot = await getDocs(q);
+				querySnapshot.forEach((doc) => {
+					docs.push({ ...doc.data(), id: doc.id });
+				});
+				setItems(docs);
+			}
+
+		};
+		getProducts();
 		setTimeout(() => {
-			fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=4`)
-				.then(response => response.json())
-				.then(respJSON => { setItems(respJSON.results); setLoading(false) })
-				.catch(error => console.log('Error:', error))
-		})
-	}, [categoryId])
-	if (loading) {
+			setIsLoading(false);
+		}, 1000);
+	}, [categoryId]);
+
+	if (isLoading) {
 		return (
 			<h5>cargando detalle del  producto..</h5>
 		)
 	}
 	return (
 		<div>
-			<h1>Categoria:{categoryId}</h1>
 			<ItemList items={items} />
 		</div>
 	);

@@ -1,14 +1,14 @@
 import React from 'react'
 import ItemListContainer from '../components/Item/ItemListContainer/ItemListContainer'
 import { useParams } from 'react-router'
+import NavBarCategory from '../components/NavBarCategory/NavBarCategory';
 
 const Category = () => {
     const params = useParams();
     return (
         <div>
+            <NavBarCategory />
             <ItemListContainer categoryId={params.categoryId} />
-            <ItemListContainer categoryId="MLA1499" />
-            <ItemListContainer categoryId="MLA1000" />
         </div>
     )
 }
