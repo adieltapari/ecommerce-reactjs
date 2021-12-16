@@ -14,7 +14,7 @@ const Cart = () => {
                         <div className="ContainerCart" key={item.id}>
                             <div className='ContainerCartItem'>
                                 <div className='ContainerName'>
-                                    <h3 >{item.qty} -{item.name}</h3>
+                                    <h3 >{item.qty} x {item.model}</h3>
                                 </div>
                                 <div className='ContainerDelete'>
                                     <div className="ui button red" style={{ margin: "10" }} onClick={() => removeItem(item.id)}>

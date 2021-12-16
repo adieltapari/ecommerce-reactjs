@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
-import { Button } from "semantic-ui-react";
+import { Card, Button, Image } from "semantic-ui-react";
 import { useCartContext } from '../../../Context/CartContext/CartContext'
 import { Link } from "react-router-dom";
 
@@ -14,39 +14,39 @@ const ItemDetail = ({ item }) => {
         setChangeButton(true)
     };
 
-
     return (
-        <div className="ContainerItemDetail" key={item.id}>
-            <div className="flexbox-container">
-                <div className="image ">
-                    <img src={item.thumbnail} alt="imagen" width={150} />
-                </div>
-                <div className="cards">
-                    <h2>${item.price}</h2>
-                    <h3>{item.title}</h3>
-                    <div>
-                        {!changeButton && (
-                            <ItemCount item={item} stock={20} initial={0} onAdd={onAdd} />
-                        )
-                        }
-                        {changeButton && (
-                            <Link to="/cart">
-                                <Button className="ui bottom blue">
-                                    Finalizar Compra
-                                </Button>
-                            </Link>
-                        )}
-                        {changeButton && (
-                            <Link to="/">
-                                <Button className="ui bottom blue">
-                                    Seguir Comprando
-                                </Button>
-                            </Link>
-                        )}
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Card style={{ margin: 20, display: "inline-block" }}>
+            <Image src={item.img} wrapped ui={false} />
+            <Card.Content extra>
+                <Card.Header>{item.model}</Card.Header>
+                <Card.Meta>
+                    <span className='date'>Stock: {item.stock}</span>
+                </Card.Meta>
+                <Card.Description>
+                    {item.description}
+                </Card.Description>
+                {!changeButton && (
+                    <ItemCount item={item} stock={20} initial={0} onAdd={onAdd} />
+                )
+                }
+                <Card.Content>
+                    {changeButton && (
+                        <Link to="/cart">
+                            <Button className="ui bottom blue">
+                                Finalizar Compra
+                            </Button>
+                        </Link>
+                    )}
+                    {changeButton && (
+                        <Link to="/">
+                            <Button className="ui bottom blue">
+                                Seguir Comprando
+                            </Button>
+                        </Link>
+                    )}
+                </Card.Content>
+            </Card.Content>
+        </Card>
     )
 }
 

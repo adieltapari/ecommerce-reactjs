@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
                 return prod
             }))
             :
-            setItems([...items, { id: item.id, name: item.title, price: item.price, qty: qty }]);
+            setItems([...items, { id: item.id, img: item.img, price: item.price, description: item.description, stock: item.stock, model: item.model, qty: qty }]);
     }
 
     const removeItem = (id) => {
