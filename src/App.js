@@ -11,6 +11,7 @@ import Category from './views/Category';
 import Footer from './components/Footer/Footer';
 import Cart from './views/Cart/Cart';
 import { CartProvider } from './Context/CartContext/CartContext';
+import Error from './views/Error/Error';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/category/:categoryId" element={<Category />}></Route>
             <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
             <Route exact path="/cart" element={<Cart />}></Route>
+            <Route path='*' element={<Error />} />
           </Routes>
         </Router>
         <Footer />
