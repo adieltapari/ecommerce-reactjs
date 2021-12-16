@@ -6,7 +6,7 @@ import MessageSuccess from '../MessageSuccess/MessageSuccess';
 import Spinner from '../Spinner/Spinner';
 
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../../firebase/firebaseConfig';
+import { db } from '../../Services/getFirestore';
 
 const initialState = {
     name: '',
@@ -45,14 +45,14 @@ const FormContact = () => {
             <form className='form-container' onSubmit={onSubmitHandler}>
                 <Input
                     className='form-input'
-                    placeholder='Name'
+                    placeholder='Nombre'
                     name='name'
                     value={values.name}
                     onChange={onChangeHandler}
                 />
                 <Input
                     className='form-input'
-                    placeholder='LastName'
+                    placeholder='Apellido'
                     name='lastName'
                     value={values.lastName}
                     onChange={onChangeHandler}
@@ -66,13 +66,13 @@ const FormContact = () => {
                 />
                 <Input
                     className='form-input'
-                    placeholder='Adress'
+                    placeholder='Dirección'
                     name='adress'
                     value={values.adress}
                     onChange={onChangeHandler}
                 />
                 <Button className='form-btn' primary>
-                    Send
+                    ENVIAR
                 </Button>
             </form>
 

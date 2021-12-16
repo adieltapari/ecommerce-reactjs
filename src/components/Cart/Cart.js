@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useCartContext } from '../../Context/CartContext/CartContext'
+import FormContact from '../FormContact/FormContact';
 import './Cart.css'
 
 const Cart = () => {
@@ -35,6 +36,11 @@ const Cart = () => {
                     </div>
                     <p>{totalPrice}</p>
                 </div>
+            }
+            {items.length !== 0 &&
+
+                <FormContact />
+
             }
         </>
     )

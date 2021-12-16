@@ -1,0 +1,15 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px;
+  height: 400px;
+}
+
+.form-input,
+.form-btn {
+  width: 400px;
+  font-size: 28px;
+  height: 40px;
+}
