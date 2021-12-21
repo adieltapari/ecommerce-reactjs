@@ -4,7 +4,6 @@ import { Input, Button } from 'semantic-ui-react';
 
 import './Cart.css';
 //Firebase
-//import firebase from 'firebase/app';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../Services/getFirestore';
 import MessageSuccess from '../../components/MessageSuccess/MessageSuccess';
@@ -13,7 +12,8 @@ import Spinner from '../../components/Spinner/Spinner';
 const Cart = () => {
     const initialState = {
         name: '',
-        phone: ''
+        phone: '',
+        email: ''
     }
     const [formData, setFormData] = useState(initialState);
     const [purchaseID, setPurchaseID] = useState('');
@@ -35,6 +35,7 @@ const Cart = () => {
         e.preventDefault();
         const order = {};
 
+        // order.date = db.firestore.Timestamp.fromDate(new Date());
         order.buyer = formData;
         order.item = items.map((items) => {
             const id = items.id
@@ -48,14 +49,6 @@ const Cart = () => {
         });
 
         setPurchaseID(docRef);
-
-        // const dbQuery = db()
-
-        // dbQuery.collection('orders').add(order)
-        //     .finally(() => {
-        //         setFormData(initialState)
-        //         clearItems()
-        //     })
         setTimeout(() => {
             setIsLoading(false);
             setFormData(initialState);
@@ -110,7 +103,13 @@ const Cart = () => {
                             value={formData.phone}
                             onChange={handleChange}
                         />
-
+                        <Input
+                            className='form-input'
+                            placeholder='Email'
+                            name='email'
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
                         <Button className='form-btn' primary>
                             ENVIAR
                         </Button>
