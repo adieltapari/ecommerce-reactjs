@@ -1,11 +1,68 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { useCartContext } from '../../Context/CartContext/CartContext'
-import FormContact from '../../components/FormContact/FormContact';
-import './Cart.css'
+import { Input, Button } from 'semantic-ui-react';
+
+import './Cart.css';
+//Firebase
+//import firebase from 'firebase/app';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../Services/getFirestore';
+import MessageSuccess from '../../components/MessageSuccess/MessageSuccess';
+import Spinner from '../../components/Spinner/Spinner';
 
 const Cart = () => {
-    const { items, removeItem, clearItems, totalPrice } = useContext(useCartContext);
-    console.log(totalPrice);
+    const initialState = {
+        name: '',
+        phone: ''
+    }
+    const [formData, setFormData] = useState(initialState);
+    const [purchaseID, setPurchaseID] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
+    const { items, removeItem, clearItems } = useContext(useCartContext);
+    console.log(items);
+
+
+    const handleChange = (e) => {
+        console.log(e)
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const createOrder = async (e) => {
+        setIsLoading(true);
+
+        e.preventDefault();
+        const order = {};
+
+        order.buyer = formData;
+        order.item = items.map((items) => {
+            const id = items.id
+            const name = items.name
+            const price = items.price
+            return { id, name, price }
+        })
+
+        const docRef = await addDoc(collection(db, 'orders'), {
+            formData, items
+        });
+
+        setPurchaseID(docRef);
+
+        // const dbQuery = db()
+
+        // dbQuery.collection('orders').add(order)
+        //     .finally(() => {
+        //         setFormData(initialState)
+        //         clearItems()
+        //     })
+        setTimeout(() => {
+            setIsLoading(false);
+            setFormData(initialState);
+            clearItems();
+        }, 1000);
+    }
+
     return (
         <>
             <div >
@@ -34,14 +91,42 @@ const Cart = () => {
                         <i className="cart icon"></i>
                         vaciar carrito
                     </div>
-                    <p>{totalPrice}</p>
                 </div>
             }
             {items.length !== 0 &&
+                <div>
+                    <form className='form-container' onSubmit={createOrder}>
+                        <Input
+                            className='form-input'
+                            placeholder='Nombre'
+                            name='name'
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
+                        <Input
+                            className='form-input'
+                            placeholder='Telefono'
+                            name='phone'
+                            value={formData.phone}
+                            onChange={handleChange}
+                        />
 
-                <FormContact />
-
+                        <Button className='form-btn' primary>
+                            ENVIAR
+                        </Button>
+                    </form>
+                </div>
             }
+            {isLoading ? (
+                <Spinner />
+            ) : (
+                purchaseID.id && (
+                    <div>
+                        <MessageSuccess msg={purchaseID} />
+                    </div>
+                )
+            )}
+
         </>
     )
 }

@@ -30,7 +30,7 @@ const FormContact = () => {
         setIsLoading(true);
         e.preventDefault();
         const docRef = await addDoc(collection(db, 'purchases'), {
-            values,
+            values
         });
         // console.log('Document written with ID: ', docRef.id);
         setPurchaseID(docRef);
