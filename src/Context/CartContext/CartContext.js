@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
     }
 
     const totalPrice = () => {
-        return items.reduce((acum, value) => (acum + (value.qty * value.items.price)), 0)
+        return items.reduce((acum, value) => (acum + (value.qty * items.price)), 0)
     }
 
     return (

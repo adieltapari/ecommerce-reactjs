@@ -33,16 +33,16 @@ const Cart = () => {
         setIsLoading(true);
 
         e.preventDefault();
-        const order = {};
+        // const order = {};
 
         // order.date = db.firestore.Timestamp.fromDate(new Date());
-        order.buyer = formData;
-        order.item = items.map((items) => {
-            const id = items.id
-            const name = items.name
-            const price = items.price
-            return { id, name, price }
-        })
+        // order.buyer = formData;
+        // order.item = items.map((items) => {
+        //     const id = items.id
+        //     const name = items.name
+        //     const price = items.price
+        //     return { id, name, price }
+        // })
 
         const docRef = await addDoc(collection(db, 'orders'), {
             formData, items
