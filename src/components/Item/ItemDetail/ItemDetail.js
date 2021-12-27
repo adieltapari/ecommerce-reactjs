@@ -2,11 +2,11 @@ import React, { useContext, useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
 import { Card, Button, Image } from "semantic-ui-react";
-import { useCartContext } from '../../../Context/CartContext/CartContext'
+import { CartContext } from '../../../Context/CartContext/CartContext'
 import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
-    const { addToCart } = useContext(useCartContext)
+    const { addToCart } = useContext(CartContext)
     const [changeButton, setChangeButton] = useState(false);
 
     const onAdd = (quantity) => {
@@ -22,6 +22,9 @@ const ItemDetail = ({ item }) => {
                 <Card.Meta>
                     <span className='date'>Stock: {item.stock}</span>
                 </Card.Meta>
+                <Card.Description>
+                    <span >Precio: ${item.price}</span>
+                </Card.Description>
                 <Card.Description>
                     {item.description}
                 </Card.Description>

@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { useCartContext } from '../../Context/CartContext/CartContext'
+import { CartContext } from '../../Context/CartContext/CartContext'
 import { Input, Button } from 'semantic-ui-react';
-
 import './Cart.css';
+import { Link } from "react-router-dom";
+
 //Firebase
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../Services/getFirestore';
@@ -18,11 +19,16 @@ const Cart = () => {
     const [formData, setFormData] = useState(initialState);
     const [purchaseID, setPurchaseID] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const formatPeso = new Intl.NumberFormat("es-CL", {
+        style: "currency",
+        currency: "CLP",
+        minimumFractionDigits: 0,
+    });
 
-    const { items, removeItem, clearItems } = useContext(useCartContext);
-    console.log(items);
+    const { items, removeItem, clearItems, totalPrice } = useContext(CartContext);
+    // console.log(items);      
 
-
+    console.log(totalPrice);
     const handleChange = (e) => {
         console.log(e)
         const { name, value } = e.target;
@@ -45,7 +51,7 @@ const Cart = () => {
         // })
 
         const docRef = await addDoc(collection(db, 'orders'), {
-            formData, items
+            formData, items, totalPrice
         });
 
         setPurchaseID(docRef);
@@ -55,28 +61,39 @@ const Cart = () => {
             clearItems();
         }, 1000);
     }
-
     return (
         <>
             <div >
-                {items.length === 0 && <h4 style={{ margin: 40 }}> carrito vacio</h4>}
+                {items.length === 0 &&
+                    <div>
+                        <h4 style={{ margin: 40 }}> carrito vacio</h4>
+                        <Link to="/category/all">
+                            <Button className="ui bottom blue">
+                                Seguir Comprando
+                            </Button>
+                        </Link>
+                    </div>
+                }
                 {
                     items.map((item) => (
                         <div className="ContainerCart" key={item.id}>
                             <div className='ContainerCartItem'>
                                 <div className='ContainerName'>
-                                    <h3 >{item.qty} x {item.model}</h3>
+                                    <h3 >Cantidad: {item.qty}  </h3>
+                                    <h3>Producto:{item.model}</h3>
+                                    <h3>Precio Unitario: {formatPeso.format(item.price)}</h3>
+                                    <h3>Importe:{formatPeso.format(item.price * item.qty)}</h3>
                                 </div>
                                 <div className='ContainerDelete'>
                                     <div className="ui button red" style={{ margin: "10" }} onClick={() => removeItem(item.id)}>
                                         <i className="delete icon"></i>
-                                        Borrar
                                     </div>
                                 </div>
                             </div>
                         </div>
                     ))
                 }
+
             </div >
             {items.length !== 0 &&
                 <div className='EmptyCart'>
@@ -84,6 +101,8 @@ const Cart = () => {
                         <i className="cart icon"></i>
                         vaciar carrito
                     </div>
+                    <h2>Total: {formatPeso.format(totalPrice())}</h2>
+
                 </div>
             }
             {items.length !== 0 &&
