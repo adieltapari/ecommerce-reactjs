@@ -4,7 +4,6 @@ import ItemList from './ItemList/ItemList'
 import { db } from '../../../Services/getFirestore';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
-import './ItemListContainer.css';
 import Spinner from '../../Spinner/Spinner';
 
 const ItemListContainer = ({ categoryId }) => {

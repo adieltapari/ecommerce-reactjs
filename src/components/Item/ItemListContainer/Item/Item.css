@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.cardProduct {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-bottom: 30px;
+}
+
+.cardProduct:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.imgProducts {
+  border-radius: 5px 5px 0 0;
+}
+
+.containerProduct {
+  padding: 2px 16px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}

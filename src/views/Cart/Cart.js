@@ -51,7 +51,7 @@ const Cart = () => {
         // })
 
         const docRef = await addDoc(collection(db, 'orders'), {
-            formData, items, totalPrice
+            formData, items
         });
 
         setPurchaseID(docRef);

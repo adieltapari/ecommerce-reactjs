@@ -1,23 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Item.css'
 
 const Item = ({ item }) => (
-    <>
-        <NavLink to={`/item/${item.id}`}>
-            <div className="ui cards" style={{ margin: 20 }}>
-                <div className="card">
-                    <div className="image">
-                        <img src={item.img} alt="imagen producto" />
-                    </div>
-                    <div className="content">
-                        <div className="header">${item.price}</div>
-                        <div className="meta">{item.description}</div>
-                        <div className="descripcion">Stock: {item.stock}</div>
-                    </div>
+    <NavLink to={`/item/${item.id}`}>
+        {
+            <div className="cardProduct">
+                <img src={item.img} alt="Avatar" style={{ height: 175, padding: 10 }} />
+                <div className="containerProduct">
+                    <h3><b>{item.model}</b></h3>
+                    <h4 className='price'>${item.price}</h4>
+                    {item.stock === 0 ? (
+                        <p>Sin stock</p>
+                    ) : (
+                        <p >Unidades Disponibles: {item.stock}</p>
+                    )}
                 </div>
             </div>
-        </NavLink>
-    </>
+        }
+    </NavLink>
 );
 
 export default Item;
