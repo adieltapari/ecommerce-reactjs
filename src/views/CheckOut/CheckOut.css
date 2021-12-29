@@ -37,3 +37,11 @@
   left: 0;
   top: 0;
 }
+.ContainerSection {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  padding: 60px;
+}

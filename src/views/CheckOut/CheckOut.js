@@ -120,7 +120,9 @@ const CheckOut = () => {
                 <Spinner />
             ) : (
                 purchaseID.id && (
-                    <div>
+                    <div className="ContainerSection">
+                        <h1>!Muchas Gracias por su Compra¡</h1>
+                        <h4>Numero de pedido:</h4>
                         <MessageSuccess msg={purchaseID} />
                     </div>
                 )
