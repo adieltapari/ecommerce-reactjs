@@ -61,11 +61,12 @@ const ItemDetail = ({ item }) => {
                     <span>{item.category}</span>
                     <h1>{item.model}</h1>
                     <p>{item.description}</p>
+
                 </div>
-
-
                 <div class="product-price">
+
                     <span>${item.price}</span>
+
                     {!changeButton && (
                         <ItemCount item={item} stock={item.stock} initial={0} onAdd={onAdd} />
                     )}
