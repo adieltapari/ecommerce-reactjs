@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-
+import './CheckOut.css'
 import { CartContext } from '../../Context/CartContext/CartContext'
 import { Input, Button } from 'semantic-ui-react';
 //Firebase
@@ -15,14 +15,18 @@ const CheckOut = () => {
         phone: '',
         email: ''
     }
+    const formatPeso = new Intl.NumberFormat("es-CL", {
+        style: "currency",
+        currency: "CLP",
+        minimumFractionDigits: 0,
+    });
     const [isLoading, setIsLoading] = useState(false);
     const [purchaseID, setPurchaseID] = useState('');
     const [formData, setFormData] = useState(initialState);
 
-    const { items, clearItems } = useContext(CartContext);
+    const { items, clearItems, totalPrice } = useContext(CartContext);
 
     const handleChange = (e) => {
-        console.log(e)
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
@@ -43,37 +47,74 @@ const CheckOut = () => {
     }
 
     return (
-        <div>
+        <div >
             {
                 items.length !== 0 &&
-                <div>
-                    <form className='form-container' onSubmit={createOrder}>
-                        <Input
-                            className='form-input'
-                            placeholder='Nombre'
-                            name='name'
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
-                        <Input
-                            className='form-input'
-                            placeholder='Telefono'
-                            name='phone'
-                            value={formData.phone}
-                            onChange={handleChange}
-                        />
-                        <Input
-                            className='form-input'
-                            placeholder='Email'
-                            name='email'
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                        <Button className='form-btn' primary>
-                            ENVIAR
-                        </Button>
-                    </form>
+                <div className='containerProductPage-checkout'>
+                    <div className='left-column-checkout'>
+                        <form className='form-container-checkout' onSubmit={createOrder}>
+                            <Input
+                                className='form-input'
+                                placeholder='Nombre'
+                                name='name'
+                                value={formData.name}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                className='form-input'
+                                placeholder='Telefono'
+                                name='phone'
+                                value={formData.phone}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                className='form-input'
+                                placeholder='Email'
+                                name='email'
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
+                            <Button className='form-btn' primary>
+                                COMPRAR
+                            </Button>
+                        </form>
+                    </div>
+                    <div className='right-column-checkout'>
+                        <table className="table">
+                            <thead>
+                                <tr className='table-primary'>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="p-2 px-3 text-uppercase"></div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Producto</div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Cantidad</div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Importe</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                {items.map((item) => (
+                                    <tr>
+                                        <td> <img src={item.img} alt='' style={{ width: 80 }} /></td>
+                                        <td>{item.model}</td>
+                                        <td>{item.qty}</td>
+                                        <td>{formatPeso.format(item.price * item.qty)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <div className='containerPrice'>
+                            <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
+                        </div>
+                    </div>
+
                 </div>
+
             }
             {isLoading ? (
                 <Spinner />

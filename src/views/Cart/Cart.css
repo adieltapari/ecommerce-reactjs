@@ -60,6 +60,7 @@
   padding: 12px 30px;
   transition: all 0.5s;
 }
+
 .cart-btn:hover {
   background-color: #64af3d;
 }
@@ -69,11 +70,16 @@
 .priceProduct {
   color: grey;
   font-size: 22px;
-  margin-left: 37rem;
-  border-top: 2px solid #e1e8ee;
+  margin-left: 17rem;
   padding: 10px;
 }
-
+.containerPrice {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
 .delet-btn {
   display: inline-block;
   background-color: #e74016;
@@ -87,6 +93,22 @@
 }
 .delet-btn:hover {
   background-color: #a7361a;
+  cursor: pointer;
+}
+
+.cartpage-btn {
+  display: inline-block;
+  background-color: #4c7cff;
+  border-radius: 6px;
+  font-size: small;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 16px;
+  transition: all 0.5s;
+  margin-left: 2rem;
+}
+.cartpage-btn:hover {
+  background-color: #4975ee;
   cursor: pointer;
 }
 th,

@@ -58,82 +58,83 @@ const Cart = () => {
     // }
     return (
         <>
-            <div >
-                {items.length === 0 &&
-                    <div>
-                        <h4 style={{ margin: 40 }}> carrito vacio</h4>
+            {items.length === 0 &&
+                <div>
+                    <h4 style={{ margin: 40 }}> carrito vacio</h4>
+                    <Link to="/category/all">
+                        <div className='container-cart-btn'>
+                            <p className='cart-btn'>Seguir Comprando</p>
+                        </div>
+                    </Link>
+                </div>
+            }
+            {items.length !== 0 &&
+                <>
+                    <table className="table">
+                        <thead>
+                            <tr className='table-primary'>
+                                <th scope="col" className="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase"></div>
+                                </th>
+                                <th scope="col" className="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Producto</div>
+                                </th>
+                                <th scope="col" className="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Cantidad</div>
+                                </th>
+                                <th scope="col" className="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Precio Unitario</div>
+                                </th>
+                                <th scope="col" className="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Importe</div>
+                                </th>
+                                <th scope="col" className="border-0 bg-light">
+                                    <div class="py-2 text-uppercase"></div>
+                                </th>
+                                <th scope="col" className="border-0 bg-ligh ">
+                                    <div class="py-2 text-uppercase">
+                                        {items.length !== 0 &&
+                                            <div className='EmptyCart'>
+                                                <div className="ui button " style={{ margin: "10" }} onClick={() => clearItems()}>
+                                                    <i className="cart icon"></i>
+                                                    vaciar carrito
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            {items.map((item) => (
+                                <tr>
+                                    <td> <img src={item.img} alt='' style={{ width: 200 }} /></td>
+                                    <td>{item.model}</td>
+                                    <td>{item.qty}</td>
+                                    <td>{formatPeso.format(item.price)}</td>
+                                    <td>{formatPeso.format(item.price * item.qty)}</td>
+                                    <td><p className='delet-btn' onClick={() => removeItem(item.id)}>eliminar</p></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <div className='containerPrice'>
+                        <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
+                    </div>
+                    <div className='containerPrice'>
                         <Link to="/category/all">
                             <div className='container-cart-btn'>
-                                <p className='cart-btn'>Seguir Comprando</p>
+                                <p className='cartpage-btn'>Seguir Comprando</p>
+                            </div>
+                        </Link>
+                        <Link to="/checkout">
+                            <div className='container-cart-btn'>
+                                <p className='cartpage-btn'>Terminar compra</p>
                             </div>
                         </Link>
                     </div>
-                }
-
-
-
-            </div >
-            {items.length !== 0 &&
-                <>
-                    <div className="ContainerCart">
-                        <table className="table table-borderless table-dark">
-                            <thead>
-                                <tr >
-                                    <th scope="col" className="border-0 bg-light">
-                                        <div class="p-2 px-3 text-uppercase"></div>
-                                    </th>
-                                    <th scope="col" className="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Producto</div>
-                                    </th>
-                                    <th scope="col" className="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Cantidad</div>
-                                    </th>
-                                    <th scope="col" className="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Precio Unitario</div>
-                                    </th>
-                                    <th scope="col" className="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Importe</div>
-                                    </th>
-                                    <th scope="col" className="border-0 bg-light">
-                                        <div class="py-2 text-uppercase"></div>
-                                    </th>
-                                    <th scope="col" className="border-0 bg-ligh ">
-                                        <div class="py-2 text-uppercase">
-                                            {items.length !== 0 &&
-                                                <div className='EmptyCart'>
-                                                    <div className="ui button " style={{ margin: "10" }} onClick={() => clearItems()}>
-                                                        <i className="cart icon"></i>
-                                                        vaciar carrito
-                                                    </div>
-
-                                                </div>
-                                            }
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {items.map((item) => (
-                                    <tr>
-                                        <td> <img src={item.img} alt='' style={{ width: 200 }} /></td>
-                                        <td>{item.model}</td>
-                                        <td>{item.qty}</td>
-                                        <td>{formatPeso.format(item.price)}</td>
-                                        <td>{formatPeso.format(item.price * item.qty)}</td>
-                                        <td><p className='delet-btn' onClick={() => removeItem(item.id)}>eliminar</p></td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-
-                        <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
-                    </div>
                 </>
             }
-
-
-
-
         </>
     )
 }
