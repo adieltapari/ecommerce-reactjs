@@ -57,6 +57,7 @@ const CheckOut = () => {
                                 className='form-input'
                                 placeholder='Nombre'
                                 name='name'
+                                required="true"
                                 value={formData.name}
                                 onChange={handleChange}
                             />
@@ -66,11 +67,13 @@ const CheckOut = () => {
                                 name='phone'
                                 value={formData.phone}
                                 onChange={handleChange}
+                                required="true"
                             />
                             <Input
                                 className='form-input'
                                 placeholder='Email'
                                 name='email'
+                                required="true"
                                 value={formData.email}
                                 onChange={handleChange}
                             />
