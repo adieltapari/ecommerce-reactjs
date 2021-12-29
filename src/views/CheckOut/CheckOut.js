@@ -75,7 +75,7 @@ const CheckOut = () => {
                                 onChange={handleChange}
                             />
                             <Button className='form-btn' primary>
-                                COMPRAR
+                                ENVIAR
                             </Button>
                         </form>
                     </div>

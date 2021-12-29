@@ -124,12 +124,12 @@ const Cart = () => {
                     <div className='containerPrice'>
                         <Link to="/category/all">
                             <div className='container-cart-btn'>
-                                <p className='cartpage-btn'>Seguir Comprando</p>
+                                <p className='cartpage-btn'>VOLVER</p>
                             </div>
                         </Link>
                         <Link to="/checkout">
                             <div className='container-cart-btn'>
-                                <p className='cartpage-btn'>Terminar compra</p>
+                                <p className='cartpage-btn'>COMPRAR</p>
                             </div>
                         </Link>
                     </div>
