@@ -11,12 +11,12 @@
   padding: 5px;
 }
 
-li {
+.containerNavBar li {
   margin: 10px;
   list-style-type: none;
   margin-block: auto;
 }
-li a {
+.containerNavBar li a {
   font-size: medium;
   color: #000000;
 }

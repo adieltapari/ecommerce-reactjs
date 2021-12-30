@@ -73,12 +73,11 @@
   margin-left: 17rem;
   padding: 10px;
 }
+
 .containerPrice {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: flex-end;
+  margin-right: 5%;
 }
 .delet-btn {
   display: inline-block;
@@ -111,10 +110,55 @@
   background-color: #4975ee;
   cursor: pointer;
 }
-th,
-td {
+
+.list1 td {
   padding-left: 3rem;
 }
-th {
+.list1 th {
   font-size: medium;
+  padding-left: 3rem;
+}
+
+.list1 tr {
+  border-top: 1px solid black;
+  height: 2px;
+  max-width: 200px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
+.list2 td {
+  width: 240px;
+  text-align: initial;
+}
+.linea {
+  border-top: 1px solid black;
+  height: 2px;
+  max-width: 200px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
+.continerCartProduct {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  display: inline-block;
+  margin: 30px;
+  border-radius: 5px;
+}
+.containerTablePrice {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: center;
+  margin-right: 5%;
+}
+.prueba {
+  border-bottom: 1px solid #4975ee;
+  padding: 3px;
+}
+.containerPurchase {
+  margin-right: 5%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.js'
-import { Card, Button, Image } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import { CartContext } from '../../../Context/CartContext/CartContext'
 import { Link } from "react-router-dom";
 

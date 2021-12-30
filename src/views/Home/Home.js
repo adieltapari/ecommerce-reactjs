@@ -34,7 +34,11 @@ const Home = () => {
                             <div className=" ui basic button" >COMPRAR</div>
                         </Link>
                     </div>
+
                 </div>
+            </div>
+            <div>
+                <h3 style={{ margin: 50 }}>DESTACADOS</h3>
             </div>
         </>
     )

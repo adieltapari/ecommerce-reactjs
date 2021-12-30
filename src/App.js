@@ -7,7 +7,7 @@ import ItemDetailContainer from './components/Item/ItemDetailContainer/ItemDetai
 
 // Views
 import Home from './views/Home/Home';
-import Category from './views/Category';
+import Category from './views/Category/Category';
 import Footer from './components/Footer/Footer';
 import Cart from './views/Cart/Cart';
 import CheckOut from './views/CheckOut/CheckOut'

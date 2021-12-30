@@ -50,8 +50,18 @@ const CheckOut = () => {
         <div >
             {
                 items.length !== 0 &&
+                <div className="containerHeaderCheckout">
+                    <p>Gracias por confiar en nosotros </p>
+                    <h3>COMPLETA LA COMPRA</h3>
+                </div>
+            }
+
+            {
+                items.length !== 0 &&
+
                 <div className='containerProductPage-checkout'>
                     <div className='left-column-checkout'>
+                        <h3>Datos de contacto</h3>
                         <form className='form-container-checkout' onSubmit={createOrder}>
                             <Input
                                 className='form-input'
@@ -78,32 +88,33 @@ const CheckOut = () => {
                                 onChange={handleChange}
                             />
                             <Button className='form-btn' primary>
-                                ENVIAR
+                                REALIZAR PEDIDO
                             </Button>
                         </form>
                     </div>
                     <div className='right-column-checkout'>
-                        <table className="table">
+                        <h3 style={{ textAlign: "start" }}> Tu pedido</h3>
+                        <table className="list1">
                             <thead>
                                 <tr className='table-primary'>
-                                    <th scope="col" className="border-0 bg-light">
+                                    <th scope="col" >
                                         <div class="p-2 px-3 text-uppercase"></div>
                                     </th>
-                                    <th scope="col" className="border-0 bg-light">
+                                    <th scope="col" >
                                         <div class="py-2 text-uppercase">Producto</div>
                                     </th>
-                                    <th scope="col" className="border-0 bg-light">
+                                    <th scope="col" >
                                         <div class="py-2 text-uppercase">Cantidad</div>
                                     </th>
-                                    <th scope="col" className="border-0 bg-light">
+                                    <th scope="col" >
                                         <div class="py-2 text-uppercase">Importe</div>
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody >
+                            <tbody className="containertbody">
                                 {items.map((item) => (
                                     <tr>
-                                        <td> <img src={item.img} alt='' style={{ width: 80 }} /></td>
+                                        <td> <img src={item.img} alt='' style={{ width: 120 }} /></td>
                                         <td>{item.model}</td>
                                         <td>{item.qty}</td>
                                         <td>{formatPeso.format(item.price * item.qty)}</td>
@@ -111,26 +122,58 @@ const CheckOut = () => {
                                 ))}
                             </tbody>
                         </table>
-                        <div className='containerPrice'>
-                            <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
+                        <div >
+                            <table className='list2'>
+                                <thead>
+                                    <tr className='table-primary '>
+                                        <th scope="col" className="border-0 bg-light">
+                                            <div class="p-2 px-3 text-uppercase"></div>
+                                        </th>
+                                        <th scope="col" className="border-0 bg-light">
+                                            <div class="py-2 text-uppercase"></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <div className='prueba'>
+                                            <td><h4 >Subtotal </h4></td>
+                                            <td style={{ textAlign: "end" }}><h4>{formatPeso.format(totalPrice())}</h4></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div className='prueba'>
+                                            <td><h4 >Envio </h4></td>
+                                            <td style={{ textAlign: "end" }}><h4>$550</h4></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div className=''>
+                                            <td><h4 >Total </h4></td>
+                                            <td style={{ textAlign: "end" }}><h4>{formatPeso.format(totalPrice() + 550)}</h4></td>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
                 </div>
 
             }
-            {isLoading ? (
-                <Spinner />
-            ) : (
-                purchaseID.id && (
-                    <div className="ContainerSection">
-                        <h1>!Muchas Gracias por su Compra¡</h1>
-                        <h4>Numero de pedido:</h4>
-                        <MessageSuccess msg={purchaseID} />
-                    </div>
+            {
+                isLoading ? (
+                    <Spinner />
+                ) : (
+                    purchaseID.id && (
+                        <div className="ContainerSection">
+                            <h1>!Muchas Gracias por su Compra¡</h1>
+                            <h4>Numero de pedido:</h4>
+                            <MessageSuccess msg={purchaseID} />
+                        </div>
+                    )
                 )
-            )}
-        </div>
+            }
+        </div >
     )
 }
 

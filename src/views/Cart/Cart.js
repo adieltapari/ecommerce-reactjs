@@ -70,69 +70,129 @@ const Cart = () => {
             }
             {items.length !== 0 &&
                 <>
-                    <table className="table">
-                        <thead>
-                            <tr className='table-primary'>
-                                <th scope="col" className="border-0 bg-light">
-                                    <div class="p-2 px-3 text-uppercase"></div>
-                                </th>
-                                <th scope="col" className="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Producto</div>
-                                </th>
-                                <th scope="col" className="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Cantidad</div>
-                                </th>
-                                <th scope="col" className="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Precio Unitario</div>
-                                </th>
-                                <th scope="col" className="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Importe</div>
-                                </th>
-                                <th scope="col" className="border-0 bg-light">
-                                    <div class="py-2 text-uppercase"></div>
-                                </th>
-                                <th scope="col" className="border-0 bg-ligh ">
-                                    <div class="py-2 text-uppercase">
-                                        {items.length !== 0 &&
-                                            <div className='EmptyCart'>
-                                                <div className="ui button " style={{ margin: "10" }} onClick={() => clearItems()}>
-                                                    <i className="cart icon"></i>
-                                                    vaciar carrito
+                    <div className='continerCartProduct'>
+                        <table className=" list1 ">
+                            <thead>
+                                <tr className='table-primary '>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="p-2 px-3 text-uppercase"> </div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Producto</div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Cantidad</div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Precio Unitario</div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Importe</div>
+                                    </th>
+                                    <th scope="col" className="border-0 bg-ligh ">
+                                        <div class="py-2 text-uppercase">
+                                            {items.length !== 0 &&
+                                                <div className='EmptyCart'>
+                                                    <div className="ui button " style={{ margin: "10" }} onClick={() => clearItems()}>
+                                                        <i className="cart icon"></i>
+                                                        vaciar carrito
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        }
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            {items.map((item) => (
-                                <tr>
-                                    <td> <img src={item.img} alt='' style={{ width: 200 }} /></td>
-                                    <td>{item.model}</td>
-                                    <td>{item.qty}</td>
-                                    <td>{formatPeso.format(item.price)}</td>
-                                    <td>{formatPeso.format(item.price * item.qty)}</td>
-                                    <td><p className='delet-btn' onClick={() => removeItem(item.id)}>eliminar</p></td>
+                                            }
+                                        </div>
+                                    </th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <div className='containerPrice'>
-                        <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
-                    </div>
-                    <div className='containerPrice'>
-                        <Link to="/category/all">
-                            <div className='container-cart-btn'>
-                                <p className='cartpage-btn'>VOLVER</p>
+                            </thead>
+
+                            <tbody >
+                                {items.map((item) => (
+                                    <tr >
+                                        <td> <img src={item.img} alt='' style={{ width: 200 }} /></td>
+                                        <td>{item.model}</td>
+                                        <td>{item.qty}</td>
+                                        <td>{formatPeso.format(item.price)}</td>
+                                        <td>{formatPeso.format(item.price * item.qty)}</td>
+                                        <td><p className='delet-btn' onClick={() => removeItem(item.id)}>eliminar</p></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <div className='containerTablePrice'>
+                            <table className='list2'>
+                                <thead>
+                                    <tr className='table-primary '>
+                                        <th scope="col" className="border-0 bg-light">
+                                            <div class="p-2 px-3 text-uppercase"></div>
+                                        </th>
+                                        <th scope="col" className="border-0 bg-light">
+                                            <div class="py-2 text-uppercase"></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <div className='prueba'>
+                                            <td><h4 >Subtotal </h4></td>
+                                            <td style={{ textAlign: "end" }}><h4>{formatPeso.format(totalPrice())}</h4></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div className='prueba'>
+                                            <td><h4 >Envio </h4></td>
+                                            <td style={{ textAlign: "end" }}><h4>$550</h4></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div className=''>
+                                            <td><h4 >Total </h4></td>
+                                            <td style={{ textAlign: "end" }}><h4>{formatPeso.format(totalPrice() + 550)}</h4></td>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className='containerPurchase'>
+                            <Link to="/checkout">
+                                <div className='container-cart-btn'>
+                                    <p className='cartpage-btn'>COMPRAR</p>
+                                </div>
+                            </Link>
+                        </div>
+
+
+
+                        {/* <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
+                                </div>
+                                <div className="col">
+                                    <Link to="/checkout">
+                                        <div className='container-cart-btn'>
+                                            <p className='cartpage-btn'>COMPRAR</p>
+                                        </div>
+                                    </Link>
+                                </div>
+
                             </div>
-                        </Link>
-                        <Link to="/checkout">
-                            <div className='container-cart-btn'>
-                                <p className='cartpage-btn'>COMPRAR</p>
-                            </div>
-                        </Link>
+                        </div> */}
+
+                        {/* <div className='containerPrice'>
+                            <h2 className='priceProduct '>Total: {formatPeso.format(totalPrice())}</h2>
+                        </div>
+                        <div className='containerPrice '>
+                            <Link to="/checkout">
+                                <div className='container-cart-btn'>
+                                    <p className='cartpage-btn'>COMPRAR</p>
+                                </div>
+                            </Link>
+                        </div> */}
                     </div>
+                    <Link to="/category/all">
+                        <div className='container-cart-btn'>
+                            <p className='cart-btn'>Seguir Comprando</p>
+                        </div>
+                    </Link>
                 </>
             }
         </>

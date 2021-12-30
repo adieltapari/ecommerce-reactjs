@@ -1,0 +1,19 @@
+.containerNavCategory {
+  display: flex;
+}
+.containerProductPage-category {
+  display: flex;
+  border-radius: 5px;
+}
+
+/* Columns */
+.left-column-category {
+  margin-top: 30px;
+  width: 20%;
+  position: relative;
+  text-align: center;
+}
+
+.right-column-category {
+  width: 100%;
+}

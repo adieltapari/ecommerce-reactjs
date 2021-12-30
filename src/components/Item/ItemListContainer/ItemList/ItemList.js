@@ -4,15 +4,18 @@ import './ItemList.css'
 
 const ItemList = ({ items }) => {
   return (
-    <div className="row" style={{ margin: 40 }}>
-      {
-        items.map((item) => (
-          <div className="column" key={item.id}>
-            <Item item={item} />
-          </div>
-        ))
-      }
-    </div>
+    <>
+      <div className="row" style={{ margin: 40 }}>
+        {
+          items.map((item) => (
+            <div className="column" key={item.id}>
+              <Item item={item} />
+            </div>
+          ))
+        }
+      </div>
+    </>
+
   )
 }
 
