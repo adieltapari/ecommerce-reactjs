@@ -1,0 +1,27 @@
+.list1 td {
+  padding-left: 3rem;
+}
+.list1 th {
+  font-size: medium;
+  padding-left: 3rem;
+}
+
+.list1 tr {
+  border-top: 1px solid black;
+  height: 2px;
+  max-width: 200px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
+.containerfeatured {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cardProductFeatured {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  margin: 20px;
+}

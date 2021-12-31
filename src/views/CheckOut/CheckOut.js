@@ -61,7 +61,7 @@ const CheckOut = () => {
 
                 <div className='containerProductPage-checkout'>
                     <div className='left-column-checkout'>
-                        <h3>Datos de contacto</h3>
+                        <h2>Datos de contacto</h2>
                         <form className='form-container-checkout' onSubmit={createOrder}>
                             <Input
                                 className='form-input'
@@ -93,7 +93,7 @@ const CheckOut = () => {
                         </form>
                     </div>
                     <div className='right-column-checkout'>
-                        <h3 style={{ textAlign: "start" }}> Tu pedido</h3>
+                        <h2 style={{ textAlign: "start" }}> Tu pedido</h2>
                         <table className="list1">
                             <thead>
                                 <tr className='table-primary'>

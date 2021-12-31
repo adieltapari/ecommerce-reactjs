@@ -3,6 +3,7 @@ import adlrobotics from './img/ADL-Web_editable-B_16.png'
 import adl_rm_01 from './img/adl_rm_01.png'
 import './Home.css'
 import { Link } from 'react-router-dom'
+import Featured from '../../components/Featured/Featured'
 
 const Home = () => {
     return (
@@ -38,7 +39,8 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                <h3 style={{ margin: 50 }}>DESTACADOS</h3>
+                <h3 style={{ margin: 20 }}>DESTACADOS</h3>
+                <Featured categoryId="kits" />
             </div>
         </>
     )

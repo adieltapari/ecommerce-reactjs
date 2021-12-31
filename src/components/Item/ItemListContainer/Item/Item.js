@@ -11,7 +11,7 @@ const Item = ({ item }) => (
                     <h3><b>{item.model}</b></h3>
                     <h4 className='price'>${item.price}</h4>
                     {item.stock === 0 ? (
-                        <p>Sin stock</p>
+                        <p style={{ color: "red" }}>Sin stock</p>
                     ) : (
                         <p >Unidades Disponibles: {item.stock}</p>
                     )}
