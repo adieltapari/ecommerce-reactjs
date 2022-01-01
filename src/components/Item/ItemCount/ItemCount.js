@@ -30,14 +30,14 @@ function ItemCount({ stock, initial, onAdd, item }) {
                 </div>
                 {
                     quantity > 0 ?
-                        <div className="extra content">
-                            <div className="ui button attached button" onClick={() => onAdd(quantity)}>
+                        <div className="extra content" style={{ marginTop: 10 }}>
+                            <div className="ui button attached button green" onClick={() => onAdd(quantity)}>
                                 <i className="cart icon"></i>
                                 Añadir al carrito
                             </div>
                         </div>
                         :
-                        <div className="extra content">
+                        <div className="extra content" style={{ marginTop: 10 }} >
                             <div className="ui button attached button disabled">
                                 <i className="cart icon pad1"></i>
                                 Añadir al carrito

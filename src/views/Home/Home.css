@@ -44,7 +44,7 @@ section h1 {
   color: #ffffff;
 }
 
-.cartAdd-btn {
+.cart-btn {
   display: inline-block;
   background-color: #7dc855;
   border-radius: 6px;
@@ -55,6 +55,6 @@ section h1 {
   transition: all 0.5s;
 }
 
-.cartAdd-btn:hover {
+.cart-btn-btn:hover {
   background-color: #64af3d;
 }

@@ -19,7 +19,7 @@ const Home = () => {
                 </section>
             </header>
             <div>
-                <h3 style={{ margin: 20 }}>DESTACADOS</h3>
+                <h2 style={{ margin: 20 }}>DESTACADOS</h2>
                 <Featured categoryId="kits" />
             </div>
         </>

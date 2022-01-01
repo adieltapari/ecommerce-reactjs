@@ -52,12 +52,14 @@ body {
   font-size: 52px;
   color: #43484d;
   letter-spacing: -2px;
+  text-align: left;
 }
 .product-description p {
   font-size: 16px;
   font-weight: 300;
   color: #86939e;
   line-height: 24px;
+  text-align: left;
 }
 
 /* Product Price */
@@ -98,4 +100,18 @@ body {
     width: 220px;
     top: -85px;
   }
+}
+.cart-btn {
+  display: inline-block;
+  background-color: #7dc855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all 0.5s;
+}
+
+.cart-btn:hover {
+  background-color: #64af3d;
 }
