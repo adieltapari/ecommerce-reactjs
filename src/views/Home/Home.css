@@ -14,3 +14,47 @@
   font-style: unset;
   color: #4c7cff;
 }
+header {
+  background: url("./img/ADL-Web_editable-B_16.png");
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+section h1 {
+  font-size: 54px;
+  text-align: end;
+  color: #4c7cff;
+}
+
+.conte {
+  text-align: center;
+}
+
+.conte p {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: end;
+  color: #ffffff;
+}
+
+.cartAdd-btn {
+  display: inline-block;
+  background-color: #7dc855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all 0.5s;
+}
+
+.cartAdd-btn:hover {
+  background-color: #64af3d;
+}
