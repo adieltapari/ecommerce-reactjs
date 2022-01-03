@@ -1,6 +1,13 @@
 import React from 'react';
-import { Loader } from 'semantic-ui-react';
+import { Loader, Segment } from 'semantic-ui-react';
 
-const Spinner = () => <Loader active inline='centered' />;
+const Spinner = () => {
+
+    return (
+        <Segment>
+            <Loader size='medium' active inline='centered'  >Cargando</Loader>;
+        </Segment>
+    )
+}
 
 export default Spinner;

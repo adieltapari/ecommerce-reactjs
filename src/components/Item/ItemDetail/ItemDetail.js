@@ -4,6 +4,7 @@ import ItemCount from '../ItemCount/ItemCount.js'
 import { Button } from "semantic-ui-react";
 import { CartContext } from '../../../Context/CartContext/CartContext'
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const ItemDetail = ({ item }) => {
     const { addToCart } = useContext(CartContext)
@@ -12,6 +13,10 @@ const ItemDetail = ({ item }) => {
     const onAdd = (quantity) => {
         addToCart(item, quantity)
         setChangeButton(true)
+        Swal.fire({
+            title: `Se agregó el producto al carrito`,
+            icon: 'success'
+        })
     };
 
     return (
@@ -25,24 +30,22 @@ const ItemDetail = ({ item }) => {
                     <span>{item.category}</span>
                     <h1>{item.model}</h1>
                     <p>{item.description}</p>
-
                     <div className='product-price'>
                         <span >${item.price}</span>
                     </div>
                     {item.stock === 0 ? (
-                        <p style={{ color: "red" }}></p>
+                        <h5 style={{ color: "red" }}>Sin stock</h5>
                     ) : (
                         <h5 >Unidades Disponibles: {item.stock}</h5>
                     )}
                 </div>
                 <div >
                     {!changeButton && (
-                        item.stock === 0 ? (
-                            <p style={{ color: "red" }}>Sin stock</p>
-                        ) : (
+                        item.stock !== 0 && (
                             <ItemCount item={item} stock={item.stock} initial={0} onAdd={onAdd} />
                         ))}
                     {changeButton && (
+
                         <div>
                             <Link to="/cart">
                                 <Button className="ui bottom blue">
