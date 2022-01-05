@@ -12,7 +12,7 @@ const Home = () => {
                     <div class="conte">
                         <p>Multiples configuraciones
                         </p>
-                        <Link to="/item/URysHOmLTyqi1AYN6wLP">
+                        <Link to="/category/all">
                             <div className=" cart-btn" >COMPRAR</div>
                         </Link>
                     </div>
