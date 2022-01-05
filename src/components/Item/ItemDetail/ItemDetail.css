@@ -26,7 +26,6 @@ body {
 }
 /* Left Column */
 .left-column img {
-  width: 100%;
   left: 0;
   top: 0;
 }

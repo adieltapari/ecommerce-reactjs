@@ -107,7 +107,7 @@ const Cart = () => {
                             <tbody >
                                 {items.map((item) => (
                                     <tr >
-                                        <td> <img src={item.img} alt='' style={{ width: 200 }} /></td>
+                                        <td> <img src={item.img} alt='' style={{ width: 150 }} /></td>
                                         <td>{item.model}</td>
                                         <td>{item.qty}</td>
                                         <td>{formatPeso.format(item.price)}</td>
