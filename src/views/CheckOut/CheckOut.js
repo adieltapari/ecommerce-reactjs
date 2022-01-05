@@ -25,7 +25,7 @@ const CheckOut = () => {
     const [formData, setFormData] = useState(initialState);
 
     const { items, clearItems, totalPrice } = useContext(CartContext);
-
+    const tPrice = totalPrice();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -35,7 +35,7 @@ const CheckOut = () => {
 
         e.preventDefault();
         const docRef = await addDoc(collection(db, 'orders'), {
-            formData, items
+            formData, items, tPrice
         });
 
         setPurchaseID(docRef);
