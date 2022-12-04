@@ -23,3 +23,16 @@
 .active {
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .containerNavBar {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+  .containerNavBar ul {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+}
