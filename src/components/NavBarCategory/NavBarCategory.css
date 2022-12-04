@@ -26,3 +26,7 @@ li a {
 .nav-item {
   text-align: left;
 }
+.navCategoryContainer {
+  display: grid;
+  grid-column: 1rem;
+}

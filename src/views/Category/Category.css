@@ -4,14 +4,15 @@
 .containerProductPage-category {
   display: flex;
   border-radius: 5px;
+  flex-direction: column;
 }
 
 /* Columns */
 .left-column-category {
   margin-top: 30px;
-  width: 20%;
   position: relative;
-  text-align: center;
+  text-align: left;
+  margin-left: 50px;
 }
 
 .right-column-category {
