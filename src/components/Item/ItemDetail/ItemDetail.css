@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   padding: 15px;
   display: flex;
+  margin-bottom: 40px;
 }
 /* Columns */
 .left-column {
@@ -100,6 +101,13 @@ body {
     top: -85px;
   }
 }
+@media (max-width: 535px) {
+  .containerProductPage {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .cart-btn {
   display: inline-block;
   background-color: #7dc855;
