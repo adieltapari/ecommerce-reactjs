@@ -14,6 +14,7 @@ import CheckOut from "./views/CheckOut/CheckOut";
 import { CartProvider } from "./Context/CartContext/CartContext";
 import Error from "./views/Error/Error";
 import CartResponsive from "./views/Cart/CartResponsive";
+import CheckOutResponsive from "./views/CheckOut/CheckOutResponsive";
 
 function App() {
   return (
@@ -34,7 +35,11 @@ function App() {
               element={<ItemDetailContainer />}
             ></Route>
             <Route exact path="/cart" element={<CartResponsive />}></Route>
-            <Route exact path="/checkout" element={<CheckOut />}></Route>
+            <Route
+              exact
+              path="/checkout"
+              element={<CheckOutResponsive />}
+            ></Route>
             <Route path="*" element={<Error />} />
           </Routes>
         </Router>

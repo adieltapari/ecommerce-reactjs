@@ -1,0 +1,118 @@
+.form-container-checkout {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 22rem;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.form-input,
+.form-btn {
+  width: 400px;
+  font-size: 28px;
+  height: 40px;
+  margin: 20px;
+}
+.containerProductPage-checkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  margin: 40px;
+  padding: 15px;
+  border-radius: 5px;
+}
+/* Columns */
+.left-column-checkout {
+  width: 65%;
+  position: relative;
+  text-align: center;
+}
+.right-column-checkout {
+  width: 90%;
+}
+
+/* Left Column */
+.left-column-checkout img {
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.ContainerSection {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  padding: 60px;
+}
+.containerHeaderCheckout {
+  box-shadow: 0 2px 5px 0 rgba(18, 82, 94, 0.2);
+  display: inline-block;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #d4d4d547;
+  width: 600px;
+}
+.list1 tr {
+  border-top: 1px solid black;
+  height: 2px;
+  max-width: 200px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
+}
+.gridTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.6fr 1fr;
+}
+.gridTableItem {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.6fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .containerHeaderCheckout {
+    display: inline-block;
+    width: auto;
+  }
+  .containerProductPage-checkout {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+    margin: 20px;
+  }
+  .gridTableItem {
+    grid-template-columns: 2fr 2fr 2fr;
+  }
+  .form-container-checkout {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .right-column-checkout {
+    width: auto;
+  }
+  .form-input,
+  .form-btn {
+    width: 300px;
+    height: 40px;
+    margin: 20px;
+  }
+  .prodContent {
+    display: none;
+  }
+  .left-column-checkout {
+    width: auto;
+  }
+  .left-column-checkout img {
+    width: 60%;
+  }
+  .gridTable {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
