@@ -84,7 +84,7 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 3rem;
-    margin: 20px;
+    margin: 0px;
   }
   .gridTableItem {
     grid-template-columns: 2fr 2fr 2fr;
