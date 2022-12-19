@@ -1,18 +1,19 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Components
-import NavBar from './components/NavBar/NavBar';
-import ItemDetailContainer from './components/Item/ItemDetailContainer/ItemDetailContainer'
+import NavBar from "./components/NavBar/NavBar";
+import ItemDetailContainer from "./components/Item/ItemDetailContainer/ItemDetailContainer";
 
 // Views
-import Home from './views/Home/Home';
-import Category from './views/Category/Category';
-import Footer from './components/Footer/Footer';
-import Cart from './views/Cart/Cart';
-import CheckOut from './views/CheckOut/CheckOut'
-import { CartProvider } from './Context/CartContext/CartContext';
-import Error from './views/Error/Error';
+import Home from "./views/Home/Home";
+import Category from "./views/Category/Category";
+import Footer from "./components/Footer/Footer";
+import Cart from "./views/Cart/Cart";
+import CheckOut from "./views/CheckOut/CheckOut";
+import { CartProvider } from "./Context/CartContext/CartContext";
+import Error from "./views/Error/Error";
+import CartResponsive from "./views/Cart/CartResponsive";
 
 function App() {
   return (
@@ -22,11 +23,19 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route exact path="/category/:categoryId" element={<Category />}></Route>
-            <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
-            <Route exact path="/cart" element={<Cart />}></Route>
+            <Route
+              exact
+              path="/category/:categoryId"
+              element={<Category />}
+            ></Route>
+            <Route
+              exact
+              path="/item/:id"
+              element={<ItemDetailContainer />}
+            ></Route>
+            <Route exact path="/cart" element={<CartResponsive />}></Route>
             <Route exact path="/checkout" element={<CheckOut />}></Route>
-            <Route path='*' element={<Error />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </Router>
         <Footer />
