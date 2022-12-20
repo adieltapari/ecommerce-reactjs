@@ -1,0 +1,16 @@
+/* Float four columns side by side */
+.containerItemList {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .containerItemList {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

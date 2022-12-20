@@ -28,5 +28,14 @@ li a {
 }
 .navCategoryContainer {
   display: grid;
-  grid-column: 1rem;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
+  margin-left: 40px;
+}
+.iconContainer {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
 }

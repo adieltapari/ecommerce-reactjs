@@ -80,7 +80,7 @@ const CheckOutResponsive = () => {
               ))}
             </div>
             <div>
-              <table className="list2">
+              <div className="list2">
                 <thead>
                   <tr className="table-primary ">
                     <th scope="col" className="border-0 bg-light">
@@ -123,7 +123,7 @@ const CheckOutResponsive = () => {
                     </div>
                   </tr>
                 </tbody>
-              </table>
+              </div>
             </div>
           </div>
           <div className="right-column-checkout">
