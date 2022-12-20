@@ -89,6 +89,7 @@
     grid-template-columns: 1fr;
     row-gap: 3rem;
     margin: 0px;
+    height: auto;
   }
   .gridTableItem {
     grid-template-columns: 2fr 2fr 2fr;
