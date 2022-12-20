@@ -90,6 +90,7 @@
     row-gap: 3rem;
     margin: 0px;
     height: auto;
+    margin-top: 30px;
   }
   .gridTableItem {
     grid-template-columns: 2fr 2fr 2fr;
