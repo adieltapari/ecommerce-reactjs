@@ -66,6 +66,7 @@
 }
 .container-cart-btn {
   margin-bottom: 40px;
+  min-height: 280px;
 }
 .priceProduct {
   color: grey;
@@ -161,4 +162,11 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+}
+
+@media (max-width: 535px) {
+  .container-cart-btn {
+    margin-bottom: 40px;
+    min-height: 0px;
+  }
 }

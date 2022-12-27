@@ -21,6 +21,7 @@
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   margin: 40px;
   padding: 15px;
+  margin-bottom: 400px;
   border-radius: 5px;
   height: 600px;
   /* Full height */
@@ -50,6 +51,7 @@
   flex-direction: column;
   align-content: center;
   padding: 60px;
+  margin-bottom: 850px;
 }
 .containerHeaderCheckout {
   box-shadow: 0 2px 5px 0 rgba(18, 82, 94, 0.2);
@@ -120,5 +122,11 @@
   }
   .gridTable {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .containerProductPage-checkout {
+    margin-bottom: 0px;
+  }
+  .ContainerSection {
+    margin-bottom: 0px;
   }
 }
